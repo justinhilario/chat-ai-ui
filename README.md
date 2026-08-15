@@ -53,8 +53,12 @@ Github:
 
 Directions for generating github secrets can be found here through Auth.js documentation:
 [Github ID and Secret Documentation](https://authjs.dev/guides/configuring-github)
-
-One step here... generate with
+These will be your:
+```bash
+AUTH_GITHUB_ID=
+AUTH_GITHUB_SECRET=
+```
+Additionally generate your auth secret with
 ```bash
 openssl rand -base64 33
 ```
