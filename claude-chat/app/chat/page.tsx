@@ -30,7 +30,7 @@ export default async function ChatPage() {
         >
           <button
             type="submit"
-            className="rounded-md border border-gray-300 px-3 py-1.5 text-sm transition-colors hover:border-blue-600 hover:text-blue-600"
+            className="cursor-pointer rounded-md border border-gray-300 px-3 py-1.5 text-sm transition-colors hover:border-blue-600 hover:text-blue-600"
           >
             Sign out
           </button>
