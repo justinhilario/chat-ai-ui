@@ -4,7 +4,10 @@ export default async function Home() {
   const session = await auth()
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-4">
+    <div className="flex min-h-screen flex-col items-center justify-center gap-8">
+      <header className="text-center">
+        <h1 className="text-2xl font-semibold">Chat with Anthropic's Claude Haiku 4.5!</h1>
+      </header>
       {session ? (
         <form
           action={async () => {
@@ -14,7 +17,7 @@ export default async function Home() {
         >
           <button
             type="submit"
-            className="rounded-full bg-foreground px-5 py-3 text-background"
+            className="rounded-full bg-foreground px-5 py-3 text-background transition-colors hover:bg-blue-600"
           >
             Sign out
           </button>
@@ -28,7 +31,7 @@ export default async function Home() {
         >
           <button
             type="submit"
-            className="rounded-full bg-foreground px-5 py-3 text-background"
+            className="rounded-full bg-foreground px-5 py-3 text-background transition-colors hover:bg-blue-600"
           >
             Sign in with GitHub
           </button>

@@ -74,7 +74,7 @@ export function ChatWindow({ conversationId, initialMessages }: ChatWindowProps)
                 className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <p
-                  className={`max-w-md whitespace-pre-wrap rounded-lg px-4 py-2 text-sm ${
+                  className={`max-w-md whitespace-pre-wrap rounded-lg px-4 py-2 text-m ${
                     message.role === "user"
                       ? "bg-blue-600 text-white"
                       : "bg-gray-200 text-gray-900"
@@ -84,6 +84,15 @@ export function ChatWindow({ conversationId, initialMessages }: ChatWindowProps)
                 </p>
               </div>
             ))}
+            {pending && (
+              <div className="flex justify-start">
+                <div className="flex items-center gap-1 rounded-lg bg-gray-200 px-4 py-3">
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.3s]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-gray-500 [animation-delay:-0.15s]" />
+                  <span className="h-2 w-2 animate-bounce rounded-full bg-gray-500" />
+                </div>
+              </div>
+            )}
             <div ref={bottomRef} />
           </div>
         )}
@@ -110,7 +119,7 @@ export function ChatWindow({ conversationId, initialMessages }: ChatWindowProps)
             type="button"
             disabled={pending}
             onClick={handleSubmit}
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white disabled:cursor-not-allowed disabled:bg-gray-300"
+            className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-700 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-gray-300"
           >
             {pending ? "Sending…" : "Send"}
           </button>
