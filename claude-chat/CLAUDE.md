@@ -116,19 +116,11 @@ neither of us has.
 One phase per invocation. `PHASES.md` holds the plan, `GATES.md` holds the
 verification commands. Never start the next phase on your own.
 
-One branch per phase, cut from `main`, squash-merged as soon as its gate
-passes. Do not leave a migration branch unmerged while starting the next
-phase; the database does not switch branches with the code.
-
 Steps marked **HUMAN** are done outside the terminal: creating the GitHub
 OAuth app, copying Neon connection strings, clicking through sign-in. Print
 the instruction and stop. Never invent a placeholder secret to keep moving.
 
 Report raw command output. "Looks good" is not a gate result.
-
-Append to `NOTES.md` whenever you produce something wrong on the first
-attempt: the prompt, what came back, the fix. That file is the raw material
-for the write-up, which is graded.
 
 ## Repo map
 
@@ -138,7 +130,6 @@ for the write-up, which is graded.
 | `STORY.md` | Starting any phase that touches UI or the data model. |
 | `PHASES.md` | Starting a phase. The plan. |
 | `GATES.md` | Finishing a phase. The literal verification commands. |
-| `NOTES.md` | Append-only. Every first-attempt mistake, for the write-up. |
 | `AGENTS.md` | Next.js scaffold file. Points at version-accurate bundled docs. Not project rules. |
 | `.claude/commands/` | Not yours to read. Invoked by Justin as `/phase` and `/gate`. |
 

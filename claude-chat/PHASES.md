@@ -20,8 +20,6 @@ verification commands.
   a visual check.
 - If a gate fails, fix the root cause in that phase. Do not add a workaround
   and move on.
-- Append to `NOTES.md` when you get something wrong: the prompt, the wrong
-  output, the fix. This is graded material.
 
 ## Branching
 
@@ -102,12 +100,10 @@ Removing a line from `.env` kills the server with a named error.
 Ten minutes. Do it before auth, not after, so that a bad key or a wrong model
 id surfaces now instead of from inside the chat route.
 
-1. Create `NOTES.md` with a header. Three other docs reference it and nothing
-   creates it. Append-only from here.
-2. Check `node -v`. `--env-file` needs 20.6 or newer. If you are below that,
+1. Check `node -v`. `--env-file` needs 20.6 or newer. If you are below that,
    the ping script gets `dotenv` instead and you find out now rather than
    mid-phase.
-3. `lib/anthropic.ts` exports the client and two constants:
+2. `lib/anthropic.ts` exports the client and two constants:
 
 ```ts
 export const MODEL = "claude-sonnet-5"
@@ -118,7 +114,7 @@ export const MAX_TOKENS = 1024
    never gets inlined in the route handler. Paste the model id from the current
    Anthropic docs rather than from memory; a 404 on the model is the cheapest
    bug in this project to fix and the most annoying to diagnose later.
-4. `scripts/ping.ts` imports `MODEL` and `MAX_TOKENS`, sends one message,
+3. `scripts/ping.ts` imports `MODEL` and `MAX_TOKENS`, sends one message,
    prints the reply. Never inline the model id at the call site.
 
 **Gate:** a reply prints. See `GATES.md` for what each error code means.
@@ -285,9 +281,6 @@ rubric.
 2. Follow only the README. Every command you had to run that the README did not
    mention is a README bug. Fix it there, not in your memory.
 3. Write the README from what you actually had to do.
-4. Write-up from `NOTES.md`: prompting approach, what you delegated versus
-   wrote, where the tooling helped and where it fought you, trade-offs, what
-   you would do with more time.
 5. History scan with `--all`. See `GATES.md`; the greps there catch commits
    that are not reachable from `HEAD`, which the old version missed.
 
