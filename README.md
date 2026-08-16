@@ -1,5 +1,7 @@
 A small AI chat app. Sign in with GitHub, talk to Claude, close the tab, come back, and your conversation is still there.
 
+[Deployed on Vercel here:](https://chat-ai-ui-sigma-nine.vercel.app/)
+
 ## Stack
 
 | Layer | Choice | Why |
